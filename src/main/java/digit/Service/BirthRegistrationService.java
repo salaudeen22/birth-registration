@@ -79,9 +79,11 @@ public class BirthRegistrationService {
         applications.forEach(application -> {
             enrichmentUtil.enrichFatherApplicantOnSearch(application);
             enrichmentUtil.enrichMotherApplicantOnSearch(application);
-//            enrichmentUtil.enrichApplicationWithWorkFlow(requestInfo,application);
+            enrichmentUtil.enrichApplicationWithWorkFlow(requestInfo,application);
+
 
         });
+
 
         // Otherwise return the found applications
         return applications;

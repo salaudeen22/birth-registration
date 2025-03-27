@@ -97,10 +97,17 @@ public class BirthApplicationEnrichment {
         application.setMother(motherApplicant);
     }
 
-//    public void enrichApplicationWithWorkFlow(RequestInfo requestInfo, BirthRegistrationApplication application) {
-//
-//
-//    }
+    public void enrichApplicationWithWorkFlow(RequestInfo requestInfo, BirthRegistrationApplication application) {
+        ProcessInstance currentWorkflow = workflowService.getCurrentWorkflow(requestInfo,application.getTenantId(),application.getApplicationNumber());
+
+        if (currentWorkflow != null) {
+            Workflow workflow = Workflow.builder().action(
+                    currentWorkflow.getAction()).comments(currentWorkflow.getComment()).documents(currentWorkflow.getDocuments()).build();
+            application.setWorkflow(workflow);
+        }
+
+
+    }
 
 
 }

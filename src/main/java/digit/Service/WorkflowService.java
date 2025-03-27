@@ -42,6 +42,11 @@ public class WorkflowService {
     }
     //latest process instance
 
+    public void getLatestWorkflowStatus()
+    {
+
+    }
+
     public State callWorkFlow(ProcessInstanceRequest workflowReq) {
 
         ProcessInstanceResponse response = null;
@@ -135,10 +140,10 @@ public class WorkflowService {
     private StringBuilder getSearchURLWithParams(String tenantId, String businessService) {
 
         StringBuilder url = new StringBuilder(config.getWfHost());
-        url.append(config.getWfBusinessServiceSearchPath());
+        url.append(config.getWfProcessInstanceSearchPath());
         url.append("?tenantId=");
         url.append(tenantId);
-        url.append("&businessServices=");
+        url.append("&businessIds=");
         url.append(businessService);
         return url;
     }
