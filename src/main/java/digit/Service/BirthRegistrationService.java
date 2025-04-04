@@ -105,6 +105,7 @@ public class BirthRegistrationService {
         existingApplication.setFather(birthRegistrationRequest.getBirthRegistrationApplications().get(0).getFather());
         existingApplication.setMother(birthRegistrationRequest.getBirthRegistrationApplications().get(0).getMother());
 
+
         //  log.info("Setting for existing Application the father"+existingApplication);
 
         birthRegistrationRequest.setBirthRegistrationApplications(Collections.singletonList(existingApplication));

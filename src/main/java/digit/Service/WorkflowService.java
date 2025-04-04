@@ -40,12 +40,7 @@ public class WorkflowService {
             callWorkFlow(workflowRequest);
         });
     }
-    //latest process instance
 
-    public void getLatestWorkflowStatus()
-    {
-
-    }
 
     public State callWorkFlow(ProcessInstanceRequest workflowReq) {
 
@@ -58,9 +53,9 @@ public class WorkflowService {
 
     private ProcessInstance getProcessInstanceForBTR(BirthRegistrationApplication application, RequestInfo requestInfo) {
 
-        log.info("ProcessInstance Applucation+{}",application);
+//        log.info("ProcessInstance Applucation+{}",application);
         Workflow workflow = application.getWorkflow();
-        log.info("ProcessInstance Workflow Application+{}",workflow);
+//        log.info("ProcessInstance Workflow Application+{}",workflow);
 
         ProcessInstance processInstance = new ProcessInstance();
         processInstance.setBusinessId(application.getApplicationNumber());
@@ -72,10 +67,10 @@ public class WorkflowService {
         processInstance.setComment(workflow.getComments());
 
 
-
-        log.info("ProcessInstance:"+processInstance);
-        log.info("WorflowStatusCode:"+workflow.getAction());
-        log.info("Workflow:"+workflow);
+//
+//        log.info("ProcessInstance:"+processInstance);
+//        log.info("WorflowStatusCode:"+workflow.getAction());
+//        log.info("Workflow:"+workflow);
 
 
 
